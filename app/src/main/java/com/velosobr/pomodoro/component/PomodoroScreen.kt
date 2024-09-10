@@ -72,16 +72,6 @@ fun PomodoroScreen() {
 }
 
 @Composable
-fun ProgressIndicator() {
-    // Implementação do indicador de progresso
-    CircularProgressIndicator(
-        progress = 0.5f, // Exemplo de progresso
-        modifier = Modifier.size(48.dp),
-        color = MaterialTheme.colorScheme.primary
-    )
-}
-
-@Composable
 @Preview
 fun PomodoroScreenPreview() {
     PomodoroScreen()
