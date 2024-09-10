@@ -1,4 +1,4 @@
-package com.velosobr.pomodoro.component
+package com.velosobr.pomodoro.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -8,27 +8,25 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.velosobr.pomodoro.component.GenericButton
+import com.velosobr.pomodoro.component.PomodoroTimer
+import com.velosobr.pomodoro.component.PomodoroTitle
+import com.velosobr.pomodoro.intent.PomodoroIntent
 import com.velosobr.pomodoro.ui.theme.AppColors
+import com.velosobr.pomodoro.viewmodel.PomodoroViewModel
+import org.koin.androidx.compose.koinViewModel
 
 
 @Composable
-fun PomodoroScreen() {
-    var key by remember { mutableIntStateOf(0) }
-    var isRunning by remember { mutableStateOf(false) }
+fun PomodoroScreen(viewModel: PomodoroViewModel = koinViewModel()) {
+    val state by viewModel.state.collectAsState()
 
     Column(
         modifier = Modifier
@@ -40,12 +38,9 @@ fun PomodoroScreen() {
         PomodoroTitle()
 
         PomodoroTimer(
-            key = key,
-            isRunning = isRunning
+            key = state.timeLeft.toInt(),
+            isRunning = state.isRunning
         )
-
-
-        Spacer(modifier = Modifier.weight(1f))
 
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -54,20 +49,28 @@ fun PomodoroScreen() {
             GenericButton(
 
                 text = "Start",
-                paddingValues = PaddingValues(start = 16.dp,end = 8.dp, top = 16.dp),
-                onClick = { isRunning = true },
+                paddingValues = PaddingValues(start = 16.dp, end = 8.dp, top = 16.dp),
+                onClick = { viewModel.handleIntent(PomodoroIntent.Start) },
                 backgroundColor = AppColors.DraculaStart,
                 fullWidth = false
             )
 
             GenericButton(
-                text = "Stop",
+                text = "Pause",
                 paddingValues = PaddingValues(start = 8.dp, end = 16.dp, top = 16.dp),
-                onClick = { isRunning = false; key++ },
-                backgroundColor = AppColors.DraculaStop,
+                onClick = { viewModel.handleIntent(PomodoroIntent.Pause) },
+                backgroundColor = AppColors.DraculaPause,
                 fullWidth = false
             )
         }
+        Spacer(modifier = Modifier.weight(1f))
+
+        GenericButton(
+            text = "Stop",
+            onClick = { viewModel.handleIntent(PomodoroIntent.Stop) },
+            backgroundColor = AppColors.DraculaStop,
+            fullWidth = true
+        )
     }
 }
 

@@ -43,7 +43,7 @@ fun PomodoroTitle() {
 
             Text(
                 text = "A simple Pomodoro timer to help you focus on your tasks.",
-                style = MaterialTheme.typography.headlineSmall.copy(
+                style = MaterialTheme.typography.bodyMedium.copy(
                     color = MaterialTheme.colorScheme.onSurface
                 ),
                 textAlign = TextAlign.Center
