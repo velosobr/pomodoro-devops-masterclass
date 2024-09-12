@@ -27,14 +27,14 @@ class PomodoroViewModelTest {
     }
 
     @Test
-    fun testStopIntent() = runTest {
+    fun testPauseIntent() = runTest {
         viewModel.handleIntent(PomodoroIntent.Pause)
         assertEquals(false, viewModel.state.value.isRunning)
     }
 
     @Test
-    fun testResetIntent() = runTest {
+    fun testStopIntent() = runTest {
         viewModel.handleIntent(PomodoroIntent.Stop)
-        assertEquals(PomodoroState(), viewModel.state.value)
+        assertEquals(PomodoroState(isRunning = false, timeLeft = 0L), viewModel.state.value)
     }
 }
