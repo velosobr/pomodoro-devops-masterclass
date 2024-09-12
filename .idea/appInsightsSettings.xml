@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.velosobr.pomodoro" />
+                  <option name="mobileSdkAppId" value="1:420169178881:android:9e334297fa375d4b688500" />
+                  <option name="projectId" value="pomodoro-bb1b1" />
+                  <option name="projectNumber" value="420169178881" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
