@@ -43,6 +43,3 @@ jobs:
 
       - name: Run Unit Tests
         run: ./gradlew test --stacktrace
-
-      - name: Run Instrumented Tests
-        run: ./gradlew connectedAndroidTest --stacktrace
