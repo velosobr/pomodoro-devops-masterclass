@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "420169178881",
+    "project_id": "pomodoro-bb1b1",
+    "storage_bucket": "pomodoro-bb1b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420169178881:android:9e334297fa375d4b688500",
+        "android_client_info": {
+          "package_name": "com.velosobr.pomodoro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe8j4BGjGdNLSVeggtPY_bm6fVJYE3iEc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
