@@ -24,6 +24,10 @@ jobs:
           java-version: '17'
           distribution: 'zulu'  # ou 'adopt', 'temurin', etc.
 
+      - name: Create google-services.json
+        run: |
+          echo '${{ secrets.GOOGLE_SERVICES_JSON }}' > $GITHUB_WORKSPACE/app/google-services.json
+
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
 
