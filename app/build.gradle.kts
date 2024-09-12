@@ -84,7 +84,8 @@ dependencies {
 }
 
 firebaseAppDistribution {
-   groups = "testers"
+    appId = "1:420169178881:android:9e334297fa375d4b688500"
+    groups = "testers"
     releaseNotesFile = "release-notes.txt"
 
 }
