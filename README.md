@@ -14,7 +14,7 @@ Este repositório contém a versão MVP (Produto Mínimo Viável) de um aplicati
 ## Como Executar o Projeto
 1. Clone este repositório usando o seguinte comando:
    ```bash
-   git clone https://github.com/seu-usuario/pomodoro-app-mvp.git
+   git clone https://github.com/velosobr/pomodoro-devops-masterclass.git
     ```
 2. Abra o projeto no Android Studio.
 3. Conecte um dispositivo Android ou inicie um emulador.
