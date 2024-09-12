@@ -1,4 +1,5 @@
 # Pomodoro App - MVP
+[![Android CI/CD with Firebase App Distribution](https://github.com/velosobr/pomodoro-devops-masterclass/actions/workflows/firebase-distribution.yml/badge.svg)](https://github.com/velosobr/pomodoro-devops-masterclass/actions/workflows/firebase-distribution.yml)
 
 Este repositório contém a versão MVP (Produto Mínimo Viável) de um aplicativo de Pomodoro desenvolvido para Android. A ideia inicial é lançar uma versão simples do app e, em seguida, trabalhar em melhorias de arquitetura, funcionalidades e boas práticas de desenvolvimento Android.
 
