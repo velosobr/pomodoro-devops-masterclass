@@ -1,0 +1,3 @@
+Esta versão inclui:
+- Melhorias de performance.
+- Correção de bugs menores.

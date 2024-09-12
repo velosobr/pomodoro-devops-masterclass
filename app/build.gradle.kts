@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
+    id("com.google.firebase.appdistribution")
+
 }
 
 android {
@@ -66,7 +68,6 @@ dependencies {
     implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
     implementation("com.google.firebase:firebase-analytics")
 
-
     // Dependências do Koin
     implementation("io.insert-koin:koin-android:3.4.0")
     implementation("io.insert-koin:koin-android-compat:3.4.0")
@@ -80,4 +81,10 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+}
+
+firebaseAppDistribution {
+   groups = "testers"
+    releaseNotesFile = "release-notes.txt"
+
 }
