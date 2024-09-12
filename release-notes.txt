@@ -1,3 +1,2 @@
 Esta versão inclui:
-- Melhorias de performance.
-- Correção de bugs menores.
+- Versão 1.0.0 do aplicativo Pomodoro.
