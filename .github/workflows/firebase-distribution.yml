@@ -52,6 +52,6 @@ jobs:
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
       - name: Upload APK to Firebase App Distribution
-        run: ./gradlew appDistributionUploadRelease
+        run: ./gradlew appDistributionUploadRelease -PfirebaseAppId=1:420169178881:android:9e334297fa375d4b688500
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
