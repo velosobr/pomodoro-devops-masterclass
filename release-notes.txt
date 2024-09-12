@@ -1,1 +1,4 @@
 Esta versão inclui:
+
+- Versão 1.0.0 do aplicativo Pomodoro.
+
