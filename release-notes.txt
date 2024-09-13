@@ -1,4 +1,5 @@
 Esta versão inclui:
 
 - Versão 1.0.0 do aplicativo Pomodoro.
+- Versão 1.0.1 - Automação do Upload para Firebase App Tester com GitHub Actions
 
