@@ -30,23 +30,24 @@ jobs:
         run: |
           versionCode=$(grep 'versionCode' app/build.gradle.kts | grep -o '[0-9]\+')
           versionName=$(grep 'versionName' app/build.gradle.kts | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
-          
+
           echo "Extracted versionCode: $versionCode"
           echo "Extracted versionName: $versionName"
-          
+
           if [ -z "$versionCode" ] || [ -z "$versionName" ]; then
             echo "versionCode or versionName is missing or not updated."
             exit 1
           fi
 
-          # Check if versionCode and versionName are different from the previous commit
+          # Check if versionCode and versionName are different from the previous commit on develop
           git fetch origin develop
-          previousVersionCode=$(git show origin/develop:app/build.gradle.kts | grep 'versionCode' | grep -o '[0-9]\+')
-          previousVersionName=$(git show origin/develop:app/build.gradle.kts | grep 'versionName' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
+          previousCommit=$(git rev-parse origin/develop^1)
+          previousVersionCode=$(git show $previousCommit:app/build.gradle.kts | grep 'versionCode' | grep -o '[0-9]\+')
+          previousVersionName=$(git show $previousCommit:app/build.gradle.kts | grep 'versionName' | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
 
           echo "Previous versionCode: $previousVersionCode"
           echo "Previous versionName: $previousVersionName"
-          
+
           if [ "$versionCode" -le "$previousVersionCode" ] || [ "$versionName" == "$previousVersionName" ]; then
             echo "versionCode or versionName has not been updated."
             exit 1
