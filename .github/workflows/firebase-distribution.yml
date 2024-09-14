@@ -29,7 +29,7 @@ jobs:
       - name: Validate versionCode and versionName
         run: |
           versionCode=$(grep 'versionCode' app/build.gradle.kts | grep -o '[0-9]\+')
-          versionName=$(grep 'versionName' app/build.gradle.kts | grep -o '[0-9]\+\.[0-9]\+')
+          versionName=$(grep 'versionName' app/build.gradle.kts | grep -o '[0-9]\+\.[0-9]\+\.[0-9]\+')
           
           if [ -z "$versionCode" ] || [ -z "$versionName" ]; then
             echo "versionCode or versionName is missing or not updated."
